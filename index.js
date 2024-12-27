@@ -15,7 +15,7 @@ const path = require('path');
 
 const app = express();
 
-const port = 4001;
+const port = process.env.PORT || 4001;
 
 dotEnv.config();
 
@@ -49,6 +49,6 @@ server.on('error', (err) => {
 });
 
 
-app.use('/home',(req,res)=>{
+app.use('/',(req,res)=>{
     res.send("<h1>Welcome to SUBY</h1>")
 })
